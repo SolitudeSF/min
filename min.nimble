@@ -14,6 +14,8 @@ installFiles  = @["core/consts.nim"]
 
 requires "nim >= 0.18.0"
 requires "nifty"
+requires "sha1"
+requires "nimSHA2"
 
 before install:
   exec "nifty install"

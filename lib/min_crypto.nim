@@ -4,13 +4,13 @@ import
   strutils,
   times
 import
-  ../core/parser, 
-  ../core/value, 
-  ../core/interpreter, 
+  ../core/parser,
+  ../core/value,
+  ../core/interpreter,
   ../core/utils
 import
-  ../packages/sha1/sha1,
-  ../packages/nimSHA2/nimSHA2,
+  sha1,
+  nimSHA2,
   ../vendor/aes/aes
 
 {.compile: "../vendor/aes/libaes.c".}
@@ -52,7 +52,7 @@ proc crypto_module*(i: In)=
     let vals = i.expect("'sym")
     let s = vals[0]
     i.push s.getString.encode.newVal
-    
+
   def.symbol("decode") do (i: In):
     let vals = i.expect("'sym")
     let s = vals[0]
